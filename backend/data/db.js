@@ -153,7 +153,7 @@ module.exports = {
     async listEvaluations(userId, accountId) {
         const client = await pool.connect();
         try {
-            const queryText = 'select e.id, e.names, e.last_names, e.email, e.weight, e.height, e.affiliation, e.birth, e.sex, e.jump_time, e.jump_height, e.created_on at time zone \'utc\' at time zone \'america/lima\' as jump_date  from evaluations e where e.user_id = $1 and e.account_id = $2 order by e.id';
+            const queryText = 'select e.id, e.names, e.last_names, e.email, e.weight, e.height, e.affiliation, e.birth, e.sex, e.jump_time, e.jump_height, e.created_on as jump_date  from evaluations e where e.user_id = $1 and e.account_id = $2 order by e.id';
             const res = await client.query(queryText, [userId, accountId]);
             if (res.rows.length < 1) return null;
             let evaluations = [];
