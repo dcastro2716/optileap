@@ -1,7 +1,7 @@
 import * as db from '../../backend/data/db';
 
 export default async function registerUser(req, res) {
-    let user = await db.findUser(req.body.email);
+    let user = await db.findAccount(req.body.email);
     if (user) {
         return res.status(400).send({ msg: 'ya existe un usuario con ese correo' });
     }
