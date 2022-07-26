@@ -4,10 +4,10 @@ import bcrypt from 'bcrypt';
 const { Pool } = pg
 
 const pool = new Pool({
-    user: 'postgres',
+    user: 'optileap',
     host: 'localhost',
     database: 'optileap',
-    password: 'postgres',
+    password: 'Fpro4nftrt..3234D4dgs4F5tfv.4Degtg',
     port: 5432,
 })
 
